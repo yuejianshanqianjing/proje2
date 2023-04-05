@@ -1,0 +1,91 @@
+git config --global user.name 'fangfang'
+git config --global uesr.email '1729502829@qq.com'
+配置用户信息
+get config --list --global
+查看所有的全局配置项
+git help config 
+git config -h
+查看帮助手册
+
+
+git init 
+将当前目录转化为Git目录  
+git init 会创造一个名为.git的隐藏目录
+
+git 工作区的4中状态
+
+1.未跟踪（不被git管理）untracked
+
+2未修改unmodified 3.已修改modified 4.已暂存 staged
+
+git操作的终极结果：让工作区中的文件都处于“未修改”的状态
+
+
+git status 
+检查文件的状态
+1.Untrackered files(未跟踪的文件)
+
+git status -s 
+以精简的方式显示文件状态
+= git status -short
+?? 两个红色问好表示未跟踪的状态
+
+git add +要跟踪的文件
+开始跟踪一个文件
+A绿色的大写A表示暂存状态
+
+现在暂存区有一个 聊天机器人.html文件等待被提交到Git仓库中进行保存
+git commit  进行提交
+
+git commit -m ‘提交了聊天机器人.html文件’
+-m后面是本次的提交信息，用来对提交的内容做进一步的描述
+
+对已经提交后的聊天机器人.html进行修改 输入git status -s
+红色的大M 表示当前文件已经被修改，但是还没有重新放回暂存区
+继续 git add (1.可以用它跟踪新文件2.把已跟踪，且已修改的文件放到暂存区3,把有冲突的文件标记为已解决状态)
+
+已修改未放到暂存区 红色M  已修改并且通过git add放到暂存区绿色M
+
+再次 git commit -m  将内容存放到git 仓库
+
+
+
+撤销对文件的修改
+git checkout --聊天机器人.html
+本质 ： 用Git 仓库中保存的文件，覆盖工作区中指定的文件。
+
+git add.  
+向暂存区一次添加多个文件
+
+git reset HEAD 要移除的文件名称
+
+git reset HEAD . 
+移除暂存区内所有的文件
+
+工作区 git add => 暂存区 git commit => Git仓库
+
+工作区 git commit -a -m'描述信息' =>Git仓库
+跳过暂存区
+
+git rm -f 聊天机器人.html
+从 Git 仓库和工作区同时移除（就是你文件夹里也会消失）
+
+git rm --cached 聊天机器人.html
+只移除Git仓库中的（本地的还在）
+
+移除完要进行一次提交  git commit -a-m
+
+
+
+git log 
+按时间先后顺序列出所有的提交历史，最近的排在最上面
+
+git lobg -2 只展示最新的两条提交历史
+
+
+
+
+
+
+
+
